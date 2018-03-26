@@ -10,10 +10,13 @@ RUN apt-get update && apt-get -y \
     build-essential && \
     rm -rf /var/lib/apt/lists/*
 
-# Install bacnet-stack
+# Install bacnet-stack and tidy-up sources
 ADD bacnet-stack-$BACNET_STACK_VERSION.tgz .
 RUN cd bacnet-stack-$BACNET_STACK_VERSION && \
-    make clean all
+    make clean all && \
+    cd .. && \
+    mv bacnet-stack-$BACNET_STACK_VERSION/bin/* bin && \
+    rm -rf bacnet-stack-$BACNET_STACK_VERSION
 
 # Run bacnet-stack simulator
-CMD bacnet-stack-$BACNET_STACK_VERSION/bin/bacserv $BACNET_DEVICE_INSTANCE
+CMD bin/bacserv $BACNET_DEVICE_INSTANCE
