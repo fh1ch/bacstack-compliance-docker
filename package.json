@@ -1,5 +1,5 @@
 {
   "name": "bacstack-compliance-docker",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A BACNET device (server) simulator as Docker container."
 }
