@@ -8,7 +8,7 @@ A BACNET device (server) simulator as Docker container based on
 
 ## Usage
 
-This container is available via [DockerHub](https://hub.docker.com/r/fh1ch/s2i-aspnet/).
+This container is available via [DockerHub](https://hub.docker.com/r/fh1ch/bacstack-compliance-docker/).
 You can simply start it using following command:
 
 ``` sh
